@@ -15,4 +15,8 @@ window.onload = function() {
 		e.preventDefault();
 		document.getElementById('contact').scrollIntoView({'behavior':'smooth'});
 	};
+	document.getElementById('hamburger').onclick = function(e) {
+		var c = document.getElementById('three-fifths').style.visibility;
+		document.getElementById('three-fifths').style.visibility = (c === 'visible') ? 'hidden' : 'visible';
+	}
 }
