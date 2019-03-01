@@ -59,7 +59,7 @@ section.one-third {
 }
 
 section#home {
-	background:#5B9279;
+	background:#ADCAD6;
 }
 
 .wrapper {
@@ -108,6 +108,14 @@ section textarea {
 	outline:0;
 	background:#2b2b2d;
 	color:#ececec;
+}
+
+section textarea::-moz-placeholder {
+	color:#cacaca;
+}
+
+section textarea::placeholder {
+	color:#cacaca;
 }
 
 #contact-name {
