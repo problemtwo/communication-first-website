@@ -1,17 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Baumans');
 
+:root {
+	--offblack:#2b2b2d;
+	--offwhite:#ececec;
+	--lighteroffblack:#4d4d4f;
+	--darkeroffwhite:#cacaca;
+	--accent:#86BBD8;
+}
+
 html, body {
 	margin:0;
 	padding:0;
 	width:100%;
 	height:100%;
+	overflow-x:hidden;
 }
 
 header {
 	position:fixed;
 	width:100%;
 	height:10%;
-	background:#2b2b2d;
+	background:var(--offblack);
 }
 
 header nav {
@@ -42,6 +51,15 @@ header nav ul#two-fifths li img {
 	height:auto;
 }
 
+header nav ul li a {
+	transition:.5s ease;
+}
+
+header nav ul li a:hover {
+	transition:.5s ease;
+	font-size:200%;
+}
+
 header nav ul#three-fifths {
 	width:50%;
 }
@@ -59,11 +77,11 @@ header nav ul#three-fifths li a {
 header nav ul li {
 	display:inline;
 	padding:0 2%;
-	color:#ececec;
+	color:var(--offwhite);
 }
 
 header nav ul li a {
-	color:#ececec;
+	color:var(--offwhite);
 	text-decoration:none;
 	font-family:'Lato', sans-serif;
 	font-size:150%;
@@ -82,13 +100,45 @@ section.one-third {
 	height:100%;
 }
 
-section#home {
-	background:#6D9DC5;
+section.one-fourth-vertical {
+	float:left;
+	padding:0;
+	width:100%;
+	height:25%;
+	background:var(--accent);
+	transition:.5s ease;
 }
 
+section#home {
+	background:var(--offwhite);
+	color:var(--offblack);
+}
+
+section#aboutus { background:var(--offblack); }
+
+.content-text {
+	visibility:hidden;
+}
+
+.content-title {
+	transition:.5s ease;
+	cursor:default;
+	-moz-user-select:none;
+	user-select:none;
+}
+
+.content-title:hover {
+	transition:.5s ease;
+	font-size:225%;
+}
+
+#learn-about-bar {
+	background:var(--offblack);
+	color:var(--accent);
+}
 
 #title-link a {
-	color:#6D9DC5;
+	color:var(--accent);
 	font-family:'Baumans';
 }
 
@@ -122,13 +172,13 @@ section#home h1 {
 }
 
 section#home h1::-moz-selection {
-	background:#2b2b2d;
-	color:#6D9DC5;
+	background:var(--offblack);
+	color:var(--accent);
 }
 
 section#home h1::selection {
-	background:#2b2b2d;
-	color:#6D9DC5;
+	background:var(--offblack);
+	color:var(--accent);
 }
 
 section#home p {
@@ -137,34 +187,86 @@ section#home p {
 }
 
 section#home p::-moz-selection {
-	background:#2b2b2d;
-	color:#6D9DC5;
+	background:var(--offblack);
+	color:var(--accent);
 }
 
 section#home p::selection {
-	background:#2b2b2d;
-	color:#6D9DC5;
+	background:var(--offblack);
+	color:var(--accent);
 }
 
 section textarea {
-	width:100%;
-	height:10%;
+	float:left;
+	
+	width:calc(50% - 10px);
+	height:calc(15% - 20px);
+	margin-right:10px;
+	margin-bottom:10px;
+	
+	padding:0px;
+	padding-top:10px;
+	
 	-moz-resize:none;
 	resize:none;
 	font-family:'Lato', sans-serif;
 	font-size:150%;
 	border:0;
 	outline:0;
-	background:#2b2b2d;
-	color:#ececec;
+	background:var(--accent);
+	color:var(--offblack);
+	
+	text-indent:20px;
+}
+
+section#contact {
+	background:var(--offwhite);
+}
+
+section#contact textarea::-moz-placeholder {
+	color:var(--lighteroffblack);
+}
+
+section#contact textarea::placeholder {
+	color:var(--lighteroffblack);
+}
+
+#contact-phone, #contact-subject {
+	width:50%;
+	margin-right:0;
 }
 
 section textarea::-moz-placeholder {
-	color:#cacaca;
+	color:var(--darkeroffwhite);
 }
 
 section textarea::placeholder {
-	color:#cacaca;
+	color:var(--darkeroffwhite);
+}
+
+#contact-message {
+	width:100%;
+	height:55%;
+}
+
+#contact-send {
+	width:100%;
+	height:10%;
+	background:var(--accent);
+	color:var(--offblack);
+	border:0;
+	font-family:'Lato', sans-serif;
+	font-size:150%;
+}
+
+#input-text {
+	width:100%;
+	background:var(--offblack);
+	color:var(--offwhite);
+}
+
+#product {
+	height:95vh;
 }
 
 #product .wrapper h1 {
@@ -173,16 +275,8 @@ section textarea::placeholder {
 
 #product .wrapper canvas {
 	width:calc(100.25% - 2px);
-	height:calc(50% - 2px);
-	border:solid 1px #6D9DC5;
-}
-
-#contact-name {
-	margin-top:2.5%;
-}
-
-#contact-message {
-	height:60%;
+	height:calc(70% - 2px);
+	border:solid 1px var(--accent);
 }
 
 footer {
@@ -190,7 +284,7 @@ footer {
 	padding-bottom:6vh;
 	width:100%;
 	height:9%;
-	background:#2b2b2d;
+	background:var(--offblack);
 }
 
 footer ul {
@@ -208,8 +302,8 @@ footer li {
 footer li p {
 	float:left;
 	width:50%;
-	background:#2b2b2d;
-	color:#ececec;
+	background:var(--offblack);
+	color:var(--offwhite);
 	font-family:'Lato', sans-serif;
 }
 
@@ -217,11 +311,11 @@ footer li i {
 	height:100%;
 	vertical-align:middle;
 	font-size:250%;
-	color:#ececec;
+	color:var(--offwhite);
 }
 
 footer li i:hover {
-	color:#cacaca;
+	color:var(--darkeroffwhite);
 }
 
 @media only screen and (max-width: 980px) {
@@ -239,10 +333,10 @@ footer li i:hover {
 		position:absolute;
 		top:5vh;
 		left:60vw;
-		height:20vh;
+		height:30vh;
 		width:30vw;
-		background:#2b2b2d;
-		border:solid 1px #ececec;
+		background:var(--offblack);
+		border:solid 1px var(--offwhite);
 	}
 	header nav ul#three-fifths li {
 		display:block;
